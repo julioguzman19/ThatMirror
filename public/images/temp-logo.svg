@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">ThatMirror grid monogram logo</title>
+  <desc id="desc">A gold square grid mirror with an interlocking T and M monogram on a transparent background.</desc>
+
+  <g fill="none" stroke="#B49A62" stroke-linecap="square" stroke-linejoin="miter">
+    <!-- Outer mirror frame -->
+    <rect x="56" y="56" width="400" height="400" stroke-width="12"/>
+    <rect x="74" y="74" width="364" height="364" stroke-width="4"/>
+
+    <!-- Grid -->
+    <path d="M195 74V438M317 74V438M74 195H438M74 317H438" stroke-width="4"/>
+
+    <!-- Monogram T -->
+    <path d="M156 150H356M256 150V336" stroke-width="20"/>
+
+    <!-- Monogram M -->
+    <path d="M168 350V210L256 360L344 210V350" stroke-width="16"/>
+  </g>
+</svg>
