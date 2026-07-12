@@ -25,14 +25,12 @@
 
   <!-- Hero -->
   <section
-    class="relative flex min-h-[560px] items-start overflow-hidden px-5 py-6 md:min-h-[620px] md:items-center md:px-8 md:py-16 lg:min-h-[700px] lg:items-start lg:px-12 lg:py-20"
+    class="relative flex min-h-[560px] items-start overflow-hidden px-5 py-6 sm:px-6 sm:py-8 md:min-h-[620px] md:items-center md:px-8 md:py-10 lg:min-h-[700px] lg:items-start lg:px-12 lg:py-20"
   >
     <!-- Responsive background -->
     <picture class="absolute inset-0">
-      <source media="(max-width: 639px)" srcset="/images/hero-background.webp" />
-
       <img
-        src="/images/hero.webp"
+        src="/images/hero-background.webp"
         alt="Elegant custom grid mirror surrounded by flowers and candles"
         class="h-full w-full object-cover object-center md:object-right lg:object-center"
       />
@@ -50,7 +48,9 @@
         <p class="mb-5 text-xs uppercase tracking-[0.25em] text-gold">Made for the moment</p>
 
         <!-- Heading -->
-        <h1 class="font-serif text-4xl leading-none drop-shadow-lg md:text-6xl lg:text-7xl">
+        <h1
+          class="font-serif text-4xl leading-none drop-shadow-lg sm:text-5xl md:text-6xl lg:text-7xl"
+        >
           <span class="block text-ivory"> The mirror </span>
 
           <span class="mt-5 block italic text-ivory md:mt-6"> your guests </span>
@@ -60,12 +60,12 @@
 
         <!-- Gold divider -->
         <div class="mt-7 flex items-center">
-          <div class="h-px w-24 bg-gold md:w-32"></div>
+          <div class="h-px w-48 bg-gold sm:w-72"></div>
           <div class="h-2 w-2 rotate-45 bg-gold"></div>
         </div>
 
         <!-- Subtitle -->
-        <p class="mt-6 max-w-[150px] text-base leading-7 text-ivory/85 md:max-w-sm md:text-lg">
+        <p class="mt-6 max-w-[150px] text-base leading-7 text-ivory/85 sm:max-w-[260px] sm:text-lg">
           Rent our custom grid mirror for weddings, parties, and special events.
         </p>
       </div>
@@ -73,7 +73,7 @@
       <!-- Check Availability -->
       <a
         href="#contact"
-        class="mt-auto inline-flex items-center justify-center gap-3 self-start rounded-full bg-gold px-8 py-3 text-center font-bold text-forest shadow-lg transition hover:bg-linen md:mt-10"
+        class="mt-auto inline-flex items-center justify-center gap-3 text-sm self-start rounded-full bg-gold px-8 py-3 text-center font-bold text-forest shadow-lg transition hover:bg-linen md:mt-10"
       >
         <svg
           aria-hidden="true"
