@@ -1,259 +1,275 @@
 <div class="bg-forest text-ivory">
-  <!-- Header -->
-  <header class="flex items-center justify-between px-5 py-4 sm:px-6 md:px-8 md:py-5 lg:px-12">
-    <a href="#" class="flex items-center gap-3">
-      <img
-        src="images/temp-logo.svg"
-        alt="ThatMirror logo"
-        class="h-10 w-10 sm:h-11 sm:w-11 lg:h-12 lg:w-12"
-      />
+  <div class="mx-auto w-full max-w-[1440px] overflow-x-hidden bg-forest-dark">
+    <!-- Header -->
+    <header class="flex items-center justify-between px-5 py-4 sm:px-6 md:px-8 md:py-5 lg:px-12">
+      <a href="#" class="flex items-center gap-3">
+        <img
+          src="images/temp-logo.svg"
+          alt="ThatMirror logo"
+          class="h-10 w-10 sm:h-11 sm:w-11 lg:h-12 lg:w-12"
+        />
 
-      <div>
-        <p class="text-base font-semibold tracking-widest sm:text-lg lg:text-xl">THATMIRROR</p>
+        <div>
+          <p class="text-base font-semibold tracking-widest sm:text-lg lg:text-xl">THATMIRROR</p>
 
-        <p class="text-[10px] uppercase tracking-widest text-ivory/60 sm:text-xs">Event Rentals</p>
-      </div>
-    </a>
-
-    <a
-      href="#contact"
-      class="rounded-full border border-gold px-4 py-2 text-xs text-gold transition hover:bg-gold hover:text-forest sm:px-5 sm:text-sm"
-    >
-      Contact us
-    </a>
-  </header>
-
-  <!-- Hero -->
-  <section
-    class="relative flex min-h-[560px] items-start overflow-hidden px-5 py-6 sm:px-6 sm:py-8 md:min-h-[620px] md:items-center md:px-8 md:py-10 lg:min-h-[700px] lg:items-start lg:px-12 lg:py-18"
-  >
-    <!-- Responsive background -->
-    <picture class="absolute inset-0">
-      <img
-        src="images/hero-background.webp"
-        alt="Elegant custom grid mirror surrounded by flowers and candles"
-        class="h-full w-full object-cover object-center md:object-right lg:object-center"
-      />
-    </picture>
-
-    <!-- Dark overlay -->
-    <div
-      class="absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/45 to-transparent md:via-forest-dark/55 lg:via-forest-dark/45"
-    ></div>
-
-    <!-- Content -->
-    <div class="relative z-10 flex w-full max-w-sm flex-col self-stretch md:max-w-xl lg:max-w-3xl">
-      <div>
-        <!-- Eyebrow -->
-        <p class="mb-5 text-xs uppercase tracking-[0.25em] text-gold lg:text-lg">
-          Made for the moment
-        </p>
-
-        <!-- Heading -->
-        <h1
-          class="font-serif text-4xl leading-none drop-shadow-lg sm:text-5xl md:text-6xl lg:text-7xl"
-        >
-          <span class="block text-ivory"> The mirror </span>
-
-          <span class="mt-5 block italic text-ivory md:mt-6"> your guests </span>
-
-          <span class="mt-5 block italic text-gold md:mt-6"> will remember </span>
-        </h1>
-
-        <!-- Gold divider -->
-        <div class="mt-7 flex items-center">
-          <div class="h-px w-48 bg-gold sm:w-72 lg:w-120"></div>
-          <div class="h-2 w-2 rotate-45 bg-gold"></div>
+          <p class="text-[10px] uppercase tracking-widest text-ivory/60 sm:text-xs">
+            Event Rentals
+          </p>
         </div>
+      </a>
 
-        <!-- Subtitle -->
-        <p
-          class="mt-6 max-w-[150px] text-base leading-7 text-ivory/85 sm:max-w-[260px] sm:text-lg lg:text-xl"
-        >
-          Rent our custom grid mirror for weddings, parties, and special events.
-        </p>
-      </div>
-
-      <!-- Check Availability -->
       <a
         href="#contact"
-        class="mt-auto inline-flex items-center justify-center gap-3 text-sm self-start rounded-full bg-gold px-8 py-3 text-center font-bold text-forest shadow-lg transition hover:bg-linen md:mt-10 lg:text-lg"
+        class="rounded-full border border-gold px-4 py-2 text-xs text-gold transition hover:bg-gold hover:text-forest sm:px-5 sm:text-sm"
       >
-        <svg
-          aria-hidden="true"
-          class="h-6 w-6"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <rect x="3" y="5" width="18" height="16" rx="2"></rect>
-          <path d="M16 3v4M8 3v4M3 10h18"></path>
-          <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path>
-        </svg>
+        Contact us
+      </a>
+    </header>
 
+    <!-- Hero -->
+    <section
+      class="relative flex overflow-hidden min-h-[580px] px-5 py-4 sm:px-6 md:px-8 md:py-5 lg:px-12"
+    >
+      <!-- Responsive background -->
+      <picture class="absolute inset-0">
+        <!-- Mobile: under 640px -->
+        <source
+          media="(max-width: 639px)"
+          srcset="images/hero-background-mobile.webp"
+          type="image/webp"
+        />
+
+        <!-- sm and larger -->
+        <img
+          src="images/hero-background.webp"
+          alt="Elegant custom grid mirror surrounded by flowers and candles"
+          class="h-full w-full object-cover object-center md:object-right"
+          fetchpriority="high"
+        />
+      </picture>
+
+      <!-- Dark overlay -->
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/45 to-transparent md:via-forest-dark/55 lg:via-forest-dark/45"
+      ></div>
+
+      <!-- Content -->
+      <div class="relative flex flex-col self-stretch w-full md:max-w-xl lg:max-w-3xl">
+        <div>
+          <!-- Eyebrow -->
+          <p class="mb-5 text-xs uppercase tracking-[0.25em] text-gold lg:text-lg">
+            Made for the moment
+          </p>
+
+          <!-- Heading -->
+          <h1
+            class="flex flex-col gap-6 md:gap-3 font-serif text-4xl leading-none drop-shadow-lg mt-12 sm:text-5xl md:text-6xl lg:text-7xl"
+          >
+            <span class="block text-ivory"> The mirror </span>
+
+            <span class="block italic text-ivory md:mt-6"> your guests </span>
+
+            <span class="block italic text-gold md:mt-6"> will remember </span>
+          </h1>
+
+          <!-- Gold divider -->
+          <div class="my-6 flex items-center xl:my-9">
+            <div class="h-px w-32 bg-gold sm:w-78 md:w-84 lg:w-120 xl:h-[3px]"></div>
+            <div class="h-2 w-2 rotate-45 bg-gold"></div>
+          </div>
+
+          <!-- Subtitle -->
+          <p
+            class="max-w-[150px] text-base leading-7 text-ivory/85 mb-12 sm:text-lg sm:max-w-[220px] lg:text-xl lg:max-w-[385px]"
+          >
+            Rent our custom grid mirror for weddings, parties, and special events.
+          </p>
+        </div>
+
+        <!-- Check Availability -->
+        <button
+          type="button"
+          class="mt-auto inline-flex w-full items-center justify-center gap-3 self-center rounded-full bg-gold py-3 text-center text-sm font-bold text-forest shadow-lg transition hover:bg-linen sm:self-start sm:w-auto sm:px-12 lg:text-lg lg:mt-6"
+        >
+          <svg
+            aria-hidden="true"
+            class="h-6 w-6"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="3" y="5" width="18" height="16" rx="2"></rect>
+            <path d="M16 3v4M8 3v4M3 10h18"></path>
+            <path d="M8 14h.01M12 14h.01M16 14h.01M8 18h.01M12 18h.01"></path>
+          </svg>
+
+          CHECK AVAILABILITY
+        </button>
+      </div>
+    </section>
+
+    <!-- Event types -->
+    <section class="bg-ivory px-5 py-9 md:py-16 text-center text-[#25251F] md:px-12">
+      <p class="text-sm uppercase tracking-widest text-gold-dark">Made for your moment</p>
+
+      <h2 class="mt-3 font-serif text-4xl md:text-5xl">Perfect for any celebration</h2>
+
+      <p class="mx-auto mt-5 max-w-2xl text-stone">
+        Create a beautiful focal point where guests can take photos, record videos and make
+        memories.
+      </p>
+
+      <div class="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
+        <article>
+          <span class="text-3xl text-gold">+</span>
+          <h3 class="mt-2 font-semibold">Weddings</h3>
+        </article>
+
+        <article>
+          <span class="text-3xl text-gold">+</span>
+          <h3 class="mt-2 font-semibold">Birthdays</h3>
+        </article>
+
+        <article>
+          <span class="text-3xl text-gold">+</span>
+          <h3 class="mt-2 font-semibold">Parties</h3>
+        </article>
+
+        <article>
+          <span class="text-3xl text-gold">+</span>
+          <h3 class="mt-2 font-semibold">Showers</h3>
+        </article>
+
+        <article>
+          <span class="text-3xl text-gold">+</span>
+          <h3 class="mt-2 font-semibold">Selfie spots</h3>
+        </article>
+
+        <article>
+          <span class="text-3xl text-gold">+</span>
+          <h3 class="mt-2 font-semibold">And more</h3>
+        </article>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="bg-forest px-5 py-9 md:py-16 md:px-12">
+      <p class="text-sm uppercase tracking-widest text-gold">One mirror, endless possibilities</p>
+
+      <h2 class="mt-3 font-serif text-4xl md:text-5xl">Made to elevate your event</h2>
+
+      <p class="mt-4 text-[#D6D0C3]">
+        Style it with florals, balloons, custom lettering, a welcome message or seating chart.
+      </p>
+
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <article>
+          <img
+            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=80"
+            alt="Wedding backdrop inspiration"
+            class="aspect-[4/5] w-full rounded-xl object-cover"
+          />
+          <h3 class="mt-3 font-semibold">Wedding backdrop</h3>
+        </article>
+
+        <article>
+          <img
+            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80"
+            alt="Wedding welcome sign inspiration"
+            class="aspect-[4/5] w-full rounded-xl object-cover"
+          />
+          <h3 class="mt-3 font-semibold">Welcome sign</h3>
+        </article>
+
+        <article>
+          <img
+            src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=80"
+            alt="Seating chart inspiration"
+            class="aspect-[4/5] w-full rounded-xl object-cover"
+          />
+          <h3 class="mt-3 font-semibold">Seating chart</h3>
+        </article>
+
+        <article>
+          <img
+            src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=80"
+            alt="Selfie spot inspiration"
+            class="aspect-[4/5] w-full rounded-xl object-cover"
+          />
+          <h3 class="mt-3 font-semibold">Selfie spot</h3>
+        </article>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="bg-ivory px-5 py-9 md:py-16 text-center text-[#25251F] md:px-12">
+      <p class="text-sm uppercase tracking-widest text-gold-dark">We make it easy</p>
+
+      <h2 class="mt-3 font-serif text-4xl md:text-5xl">Simple. Stunning. Stress free.</h2>
+
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="border border-linen bg-cream p-6">
+          <span class="text-3xl text-gold">+</span>
+          <h3 class="mt-3 font-semibold">Flexible rentals</h3>
+          <p class="mt-2 text-sm text-stone">
+            Choose the rental option that works best for your event.
+          </p>
+        </article>
+
+        <article class="border border-linen bg-cream p-6">
+          <span class="text-3xl text-gold">+</span>
+          <h3 class="mt-3 font-semibold">Delivery and setup</h3>
+          <p class="mt-2 text-sm text-stone">We handle delivery, setup and removal.</p>
+        </article>
+
+        <article class="border border-linen bg-cream p-6">
+          <span class="text-3xl text-gold">+</span>
+          <h3 class="mt-3 font-semibold">Premium quality</h3>
+          <p class="mt-2 text-sm text-stone">A custom-built piece made to impress.</p>
+        </article>
+
+        <article class="border border-linen bg-cream p-6">
+          <span class="text-3xl text-gold">+</span>
+          <h3 class="mt-3 font-semibold">Perfect for photos</h3>
+          <p class="mt-2 text-sm text-stone">A backdrop guests naturally gather around.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="bg-forest-dark px-5 py-9 md:py-16 text-center md:px-12">
+      <h2 class="font-serif text-5xl md:text-6xl">Ready to book?</h2>
+
+      <p class="mt-5 text-[#D6D0C3]">
+        Tell us your event date and location. We'll confirm availability and send you the details.
+      </p>
+
+      <a
+        href="mailto:hello@thatmirror.com"
+        class="mt-8 inline-block rounded-full bg-gold px-8 py-4 font-bold text-forest"
+      >
         CHECK AVAILABILITY
       </a>
-    </div>
-  </section>
 
-  <!-- Event types -->
-  <section class="bg-ivory px-5 py-9 md:py-16 text-center text-[#25251F] md:px-12">
-    <p class="text-sm uppercase tracking-widest text-gold-dark">Made for your moment</p>
+      <p class="mt-6 text-sm text-ivory/40">Weddings · Birthdays · Parties · Special events</p>
+    </section>
 
-    <h2 class="mt-3 font-serif text-4xl md:text-5xl">Perfect for any celebration</h2>
+    <!-- Footer -->
+    <footer class="border-t border-[#B49A62]/20 bg-[#0C110E] px-5 py-8 md:px-12">
+      <div
+        class="flex flex-col items-center justify-between gap-4 text-sm text-ivory/50 sm:flex-row"
+      >
+        <p>© 2026 ThatMirror. All rights reserved.</p>
 
-    <p class="mx-auto mt-5 max-w-2xl text-stone">
-      Create a beautiful focal point where guests can take photos, record videos and make memories.
-    </p>
-
-    <div class="mt-10 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
-      <article>
-        <span class="text-3xl text-gold">+</span>
-        <h3 class="mt-2 font-semibold">Weddings</h3>
-      </article>
-
-      <article>
-        <span class="text-3xl text-gold">+</span>
-        <h3 class="mt-2 font-semibold">Birthdays</h3>
-      </article>
-
-      <article>
-        <span class="text-3xl text-gold">+</span>
-        <h3 class="mt-2 font-semibold">Parties</h3>
-      </article>
-
-      <article>
-        <span class="text-3xl text-gold">+</span>
-        <h3 class="mt-2 font-semibold">Showers</h3>
-      </article>
-
-      <article>
-        <span class="text-3xl text-gold">+</span>
-        <h3 class="mt-2 font-semibold">Selfie spots</h3>
-      </article>
-
-      <article>
-        <span class="text-3xl text-gold">+</span>
-        <h3 class="mt-2 font-semibold">And more</h3>
-      </article>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section id="gallery" class="bg-forest px-5 py-9 md:py-16 md:px-12">
-    <p class="text-sm uppercase tracking-widest text-gold">One mirror, endless possibilities</p>
-
-    <h2 class="mt-3 font-serif text-4xl md:text-5xl">Made to elevate your event</h2>
-
-    <p class="mt-4 text-[#D6D0C3]">
-      Style it with florals, balloons, custom lettering, a welcome message or seating chart.
-    </p>
-
-    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      <article>
-        <img
-          src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=80"
-          alt="Wedding backdrop inspiration"
-          class="aspect-[4/5] w-full rounded-xl object-cover"
-        />
-        <h3 class="mt-3 font-semibold">Wedding backdrop</h3>
-      </article>
-
-      <article>
-        <img
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80"
-          alt="Wedding welcome sign inspiration"
-          class="aspect-[4/5] w-full rounded-xl object-cover"
-        />
-        <h3 class="mt-3 font-semibold">Welcome sign</h3>
-      </article>
-
-      <article>
-        <img
-          src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=80"
-          alt="Seating chart inspiration"
-          class="aspect-[4/5] w-full rounded-xl object-cover"
-        />
-        <h3 class="mt-3 font-semibold">Seating chart</h3>
-      </article>
-
-      <article>
-        <img
-          src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=80"
-          alt="Selfie spot inspiration"
-          class="aspect-[4/5] w-full rounded-xl object-cover"
-        />
-        <h3 class="mt-3 font-semibold">Selfie spot</h3>
-      </article>
-    </div>
-  </section>
-
-  <!-- Benefits -->
-  <section class="bg-ivory px-5 py-9 md:py-16 text-center text-[#25251F] md:px-12">
-    <p class="text-sm uppercase tracking-widest text-gold-dark">We make it easy</p>
-
-    <h2 class="mt-3 font-serif text-4xl md:text-5xl">Simple. Stunning. Stress free.</h2>
-
-    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-      <article class="border border-linen bg-cream p-6">
-        <span class="text-3xl text-gold">+</span>
-        <h3 class="mt-3 font-semibold">Flexible rentals</h3>
-        <p class="mt-2 text-sm text-stone">
-          Choose the rental option that works best for your event.
-        </p>
-      </article>
-
-      <article class="border border-linen bg-cream p-6">
-        <span class="text-3xl text-gold">+</span>
-        <h3 class="mt-3 font-semibold">Delivery and setup</h3>
-        <p class="mt-2 text-sm text-stone">We handle delivery, setup and removal.</p>
-      </article>
-
-      <article class="border border-linen bg-cream p-6">
-        <span class="text-3xl text-gold">+</span>
-        <h3 class="mt-3 font-semibold">Premium quality</h3>
-        <p class="mt-2 text-sm text-stone">A custom-built piece made to impress.</p>
-      </article>
-
-      <article class="border border-linen bg-cream p-6">
-        <span class="text-3xl text-gold">+</span>
-        <h3 class="mt-3 font-semibold">Perfect for photos</h3>
-        <p class="mt-2 text-sm text-stone">A backdrop guests naturally gather around.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="bg-forest-dark px-5 py-9 md:py-16 text-center md:px-12">
-    <h2 class="font-serif text-5xl md:text-6xl">Ready to book?</h2>
-
-    <p class="mt-5 text-[#D6D0C3]">
-      Tell us your event date and location. We'll confirm availability and send you the details.
-    </p>
-
-    <a
-      href="mailto:hello@thatmirror.com"
-      class="mt-8 inline-block rounded-full bg-gold px-8 py-4 font-bold text-forest"
-    >
-      CHECK AVAILABILITY
-    </a>
-
-    <p class="mt-6 text-sm text-ivory/40">Weddings · Birthdays · Parties · Special events</p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t border-[#B49A62]/20 bg-[#0C110E] px-5 py-8 md:px-12">
-    <div class="flex flex-col items-center justify-between gap-4 text-sm text-ivory/50 sm:flex-row">
-      <p>© 2026 ThatMirror. All rights reserved.</p>
-
-      <div class="flex gap-5">
-        <a href="#" class="hover:text-[#B49A62]">Instagram</a>
-        <a href="#" class="hover:text-[#B49A62]">TikTok</a>
-        <a href="mailto:hello@thatmirror.com" class="hover:text-[#B49A62]">Email</a>
+        <div class="flex gap-5">
+          <a href="#" class="hover:text-[#B49A62]">Instagram</a>
+          <a href="#" class="hover:text-[#B49A62]">TikTok</a>
+          <a href="mailto:hello@thatmirror.com" class="hover:text-[#B49A62]">Email</a>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
 </div>
