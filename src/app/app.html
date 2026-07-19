@@ -113,42 +113,50 @@
 
       <div
         #galleryTrack
-        class="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0"
+        class="mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0"
+        (scroll)="updateGalleryButtons(galleryTrack)"
       >
-        <article class="basis-[calc(50%_-_0.5rem)] flex-none snap-start lg:basis-auto">
-          <img
-            src="images/event-backdrop.png"
-            alt="Mirror used as an event backdrop"
-            class="aspect-[3/2] w-full rounded-xl object-cover"
-          />
-          <h3 class="mt-3 font-semibold">Event backdrop</h3>
-        </article>
-
-        <article class="basis-[calc(50%_-_0.5rem)] flex-none snap-start lg:basis-auto">
+        <article
+          class="basis-[88%] flex-none snap-start sm:basis-[calc(50%_-_0.5rem)] lg:basis-auto"
+        >
           <img
             src="images/welcome-sign.png"
             alt="Mirror used as a wedding welcome sign"
-            class="aspect-[3/2] w-full rounded-xl object-cover"
+            class="aspect-[4/3] w-full rounded-xl object-cover"
           />
           <h3 class="mt-3 font-semibold">Welcome sign</h3>
         </article>
 
-        <article class="basis-[calc(50%_-_0.5rem)] flex-none snap-start lg:basis-auto">
+        <article
+          class="basis-[88%] flex-none snap-start sm:basis-[calc(50%_-_0.5rem)] lg:basis-auto"
+        >
           <img
             src="images/seating-chart.png"
             alt="Mirror used as a seating chart"
-            class="aspect-[3/2] w-full rounded-xl object-cover"
+            class="aspect-[4/3] w-full rounded-xl object-cover"
           />
           <h3 class="mt-3 font-semibold">Seating chart</h3>
         </article>
 
-        <article class="basis-[calc(50%_-_0.5rem)] flex-none snap-start lg:basis-auto">
+        <article
+          class="basis-[88%] flex-none snap-start sm:basis-[calc(50%_-_0.5rem)] lg:basis-auto"
+        >
           <img
             src="images/brunch.png"
             alt="Mirror styled for an outdoor brunch"
-            class="aspect-[3/2] w-full rounded-xl object-cover"
+            class="aspect-[4/3] w-full rounded-xl object-cover"
           />
           <h3 class="mt-3 font-semibold">Brunch</h3>
+        </article>
+        <article
+          class="basis-[88%] flex-none snap-start sm:basis-[calc(50%_-_0.5rem)] lg:basis-auto"
+        >
+          <img
+            src="images/event-backdrop.png"
+            alt="Mirror used as an event backdrop"
+            class="aspect-[4/3] w-full rounded-xl object-cover"
+          />
+          <h3 class="mt-3 font-semibold">Event backdrop</h3>
         </article>
       </div>
 
@@ -156,7 +164,8 @@
         <button
           type="button"
           aria-label="Previous gallery images"
-          class="grid h-10 w-10 place-items-center rounded-full border border-gold text-gold transition hover:bg-gold hover:text-forest-dark"
+          [disabled]="galleryAtStart"
+          class="grid h-10 w-10 place-items-center rounded-full border border-gold text-gold transition hover:bg-gold hover:text-forest-dark disabled:cursor-not-allowed disabled:border-[#25251f]/25 disabled:text-[#25251f]/25 disabled:hover:bg-transparent"
           (click)="scrollGalleryPage(galleryTrack, -1)"
         >
           <svg
@@ -173,7 +182,8 @@
         <button
           type="button"
           aria-label="Next gallery images"
-          class="grid h-10 w-10 place-items-center rounded-full border border-gold text-gold transition hover:bg-gold hover:text-forest-dark"
+          [disabled]="galleryAtEnd"
+          class="grid h-10 w-10 place-items-center rounded-full border border-gold text-gold transition hover:bg-gold hover:text-forest-dark disabled:cursor-not-allowed disabled:border-[#25251f]/25 disabled:text-[#25251f]/25 disabled:hover:bg-transparent"
           (click)="scrollGalleryPage(galleryTrack, 1)"
         >
           <svg
