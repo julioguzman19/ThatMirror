@@ -11,7 +11,7 @@ import { FeatureItemComponent } from './components/feature-item/feature-item.com
 export class App {
   protected readonly title = signal('that-mirror');
 
-  scrollGallery(element: HTMLElement, direction: number): void {
+scrollGalleryPage(element: HTMLElement, direction: number): void {
   element.scrollBy({
     left: element.clientWidth * direction,
     behavior: 'smooth',
