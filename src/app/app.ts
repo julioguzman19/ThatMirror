@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { FeatureItemComponent } from './components/feature-item.component';
+import { FeatureItemComponent } from './components/feature-item/feature-item.component';
 
 
 @Component({
@@ -10,4 +10,11 @@ import { FeatureItemComponent } from './components/feature-item.component';
 })
 export class App {
   protected readonly title = signal('that-mirror');
+
+  scrollGallery(element: HTMLElement, direction: number): void {
+  element.scrollBy({
+    left: element.clientWidth * direction,
+    behavior: 'smooth',
+  });
+}
 }
