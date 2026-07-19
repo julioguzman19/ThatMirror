@@ -1,8 +1,10 @@
 import { Component, signal } from '@angular/core';
+import { FeatureItemComponent } from './components/feature-item.component';
+
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [FeatureItemComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
