@@ -28,7 +28,7 @@
 
     <!-- Hero -->
     <section
-      class="relative flex overflow-hidden min-h-[520px] px-5 py-4 sm:px-6 md:px-8 md:py-5 lg:px-12"
+      class="relative flex overflow-hidden min-h-[520px] px-5 py-4 sm:px-6 md:px-8 md:py-7 lg:px-12"
     >
       <!-- Responsive background -->
       <picture class="absolute inset-0">
@@ -55,7 +55,7 @@
 
           <!-- Heading -->
           <h1
-            class="flex flex-col gap-6 md:gap-3 font-serif text-4xl leading-none drop-shadow-lg sm:text-5xl md:text-6xl lg:text-7xl"
+            class="flex flex-col font-serif leading-none drop-shadow-lg text-4xl gap-6 sm:text-5xl md:gap-[4px] md:text-6xl lg:text-7xl"
           >
             <span class="block text-ivory"> The mirror </span>
 
@@ -103,8 +103,97 @@
       </div>
     </section>
 
+    <!-- Gallery -->
+    <section id="gallery" class="bg-ivory px-5 py-9 text-[#25251f] md:px-12 md:py-6">
+      <div>
+        <p class="text-sm uppercase tracking-widest">One mirror, endless possibilities</p>
+
+        <h2 class="mt-3 font-serif text-4xl md:text-5xl">Made to elevate your event</h2>
+      </div>
+
+      <div
+        #galleryTrack
+        class="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden lg:grid lg:grid-cols-4 lg:overflow-visible lg:pb-0"
+      >
+        <article class="min-w-[82%] snap-start sm:min-w-[calc(50%-0.5rem)] lg:min-w-0">
+          <img
+            src="images/event-backdrop.png"
+            alt="Mirror used as an event backdrop"
+            class="aspect-[4/5] w-full rounded-xl object-cover"
+          />
+          <h3 class="mt-3 font-semibold">Event backdrop</h3>
+        </article>
+
+        <article class="min-w-[82%] snap-start sm:min-w-[calc(50%-0.5rem)] lg:min-w-0">
+          <img
+            src="images/welcome-sign.png"
+            alt="Mirror used as a wedding welcome sign"
+            class="aspect-[4/5] w-full rounded-xl object-cover"
+          />
+          <h3 class="mt-3 font-semibold">Welcome sign</h3>
+        </article>
+
+        <article class="min-w-[82%] snap-start sm:min-w-[calc(50%-0.5rem)] lg:min-w-0">
+          <img
+            src="images/seating-chart.png"
+            alt="Mirror used as a seating chart"
+            class="aspect-[4/5] w-full rounded-xl object-cover"
+          />
+          <h3 class="mt-3 font-semibold">Seating chart</h3>
+        </article>
+
+        <article class="min-w-[82%] snap-start sm:min-w-[calc(50%-0.5rem)] lg:min-w-0">
+          <img
+            src="images/brunch.png"
+            alt="Mirror styled for an outdoor brunch"
+            class="aspect-[4/5] w-full rounded-xl object-cover"
+          />
+          <h3 class="mt-3 font-semibold">Brunch</h3>
+        </article>
+      </div>
+
+      <!-- Mobile and tablet controls -->
+      <div class="mt-4 flex justify-center gap-3 lg:hidden">
+        <button
+          type="button"
+          aria-label="Previous gallery image"
+          class="grid h-10 w-10 place-items-center rounded-full border border-gold text-gold transition hover:bg-gold hover:text-forest-dark"
+          (click)="scrollGallery(galleryTrack, -1)"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            class="h-5 w-5"
+          >
+            <path d="m15 18-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <button
+          type="button"
+          aria-label="Next gallery image"
+          class="grid h-10 w-10 place-items-center rounded-full border border-gold text-gold transition hover:bg-gold hover:text-forest-dark"
+          (click)="scrollGallery(galleryTrack, 1)"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            class="h-5 w-5"
+          >
+            <path d="m9 18 6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
     <!-- Event types -->
-    <section class="bg-ivory px-5 py-4 text-center text-[#25251f] sm:px-6 md:px-8 md:py-5 lg:px-12">
+    <section
+      class="bg-forest px-5 py-4 text-center text-[#D6D0C3] sm:px-6 md:px-8 md:py-5 lg:px-12"
+    >
       <p class="text-xs font-medium uppercase tracking-[0.25em] text-gold-dark sm:text-sm">
         Made for your moment
       </p>
@@ -131,138 +220,6 @@
         <app-feature-item icon="celebration" title="Any Event"></app-feature-item>
 
         <app-feature-item icon="delivery" title="Setup Included"></app-feature-item>
-      </div>
-    </section>
-
-    <!-- Gallery -->
-    <section id="gallery" class="bg-forest px-5 py-9 md:px-12 md:py-16">
-      <div class="flex items-end justify-between gap-5">
-        <div>
-          <p class="text-sm uppercase tracking-widest text-gold">
-            One mirror, endless possibilities
-          </p>
-
-          <h2 class="mt-3 font-serif text-4xl md:text-5xl">Made to elevate your event</h2>
-
-          <p class="mt-4 max-w-2xl text-[#D6D0C3]">
-            Style it with florals, balloons, custom lettering, a welcome message or seating chart.
-          </p>
-        </div>
-
-        <!-- Desktop controls -->
-        <div class="hidden shrink-0 gap-3 sm:flex">
-          <button
-            type="button"
-            aria-label="Previous gallery image"
-            class="grid h-11 w-11 place-items-center rounded-full border border-gold text-gold transition hover:bg-gold hover:text-forest-dark"
-            (click)="scrollGallery(galleryTrack, -1)"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              class="h-5 w-5"
-            >
-              <path d="m15 18-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-
-          <button
-            type="button"
-            aria-label="Next gallery image"
-            class="grid h-11 w-11 place-items-center rounded-full border border-gold text-gold transition hover:bg-gold hover:text-forest-dark"
-            (click)="scrollGallery(galleryTrack, 1)"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.8"
-              class="h-5 w-5"
-            >
-              <path d="m9 18 6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </button>
-        </div>
-      </div>
-
-      <div
-        #galleryTrack
-        class="mt-10 flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
-      >
-        <article class="min-w-[85%] snap-start sm:min-w-[47%] lg:min-w-[31%]">
-          <img
-            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1000&q=80"
-            alt="Wedding backdrop inspiration"
-            class="aspect-[4/5] w-full rounded-xl object-cover"
-          />
-          <h3 class="mt-3 font-semibold">Wedding backdrop</h3>
-        </article>
-
-        <article class="min-w-[85%] snap-start sm:min-w-[47%] lg:min-w-[31%]">
-          <img
-            src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80"
-            alt="Wedding welcome sign inspiration"
-            class="aspect-[4/5] w-full rounded-xl object-cover"
-          />
-          <h3 class="mt-3 font-semibold">Welcome sign</h3>
-        </article>
-
-        <article class="min-w-[85%] snap-start sm:min-w-[47%] lg:min-w-[31%]">
-          <img
-            src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=80"
-            alt="Seating chart inspiration"
-            class="aspect-[4/5] w-full rounded-xl object-cover"
-          />
-          <h3 class="mt-3 font-semibold">Seating chart</h3>
-        </article>
-
-        <article class="min-w-[85%] snap-start sm:min-w-[47%] lg:min-w-[31%]">
-          <img
-            src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=1000&q=80"
-            alt="Selfie spot inspiration"
-            class="aspect-[4/5] w-full rounded-xl object-cover"
-          />
-          <h3 class="mt-3 font-semibold">Selfie spot</h3>
-        </article>
-      </div>
-
-      <!-- Mobile controls -->
-      <div class="mt-5 flex justify-end gap-3 sm:hidden">
-        <button
-          type="button"
-          aria-label="Previous gallery image"
-          class="grid h-11 w-11 place-items-center rounded-full border border-gold text-gold"
-          (click)="scrollGallery(galleryTrack, -1)"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            class="h-5 w-5"
-          >
-            <path d="m15 18-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
-
-        <button
-          type="button"
-          aria-label="Next gallery image"
-          class="grid h-11 w-11 place-items-center rounded-full border border-gold text-gold"
-          (click)="scrollGallery(galleryTrack, 1)"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.8"
-            class="h-5 w-5"
-          >
-            <path d="m9 18 6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
       </div>
     </section>
 
