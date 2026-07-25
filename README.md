@@ -20,3 +20,8 @@ If a section does not show a folding arrow:
 4. Press Enter.
 
 VS Code will add a folding arrow for the selected code.
+
+## Github Action
+1. If dist folder updated or rebuild needed: 
+    - npm run build  
+    - npx ng build --base-href /ThatMirror/
