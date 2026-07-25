@@ -1,10 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { FeatureItemComponent } from './components/feature-item/feature-item.component';
+import { CheckAvailabilityButtonComponent } from './components/check-availability-button/check-availability-button.component';
+
 
 
 @Component({
   selector: 'app-root',
-  imports: [FeatureItemComponent],
+  imports: [CheckAvailabilityButtonComponent,FeatureItemComponent],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
