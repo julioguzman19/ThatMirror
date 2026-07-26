@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Manrope:wght@400;500;600&display=swap");
 
 @theme {
   --color-charcoal:#25251f;
@@ -10,6 +12,11 @@
   --color-gold-dark: #8c7445;
   --color-stone: #625f56;
   --color-linen: #d8d0be;
+
+  --font-site: "Manrope", sans-serif;
+  --font-hero: "Cormorant Garamond", serif;
+  --font-sans: "Manrope", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
 }
 
 html {
@@ -20,9 +27,48 @@ body {
   margin: 0;
   min-width: 320px;
   background: #0a0a0a;
+  font-family: var(--font-sans);
 }
 
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+}
+
+/* 
+Mobile:  20px horizontal, 16px vertical
+Small:   24px horizontal, 16px vertical
+Tablet:  32px horizontal, 28px vertical
+Desktop: 48px horizontal, 32px vertical 
+*/
+.section-padding {
+  padding: 1rem 1.25rem;
+}
+
+@media (min-width: 40rem) {
+  .section-padding {
+    padding-inline: 1.5rem;
+  }
+}
+
+@media (min-width: 48rem) {
+  .section-padding {
+    padding-inline: 2rem;
+    padding-block: 1.75rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .section-padding {
+    padding-inline: 3rem;
+    padding-block: 2rem;
+  }
+}
+
+.section-eyebrow {
+  @apply font-site text-xs font-medium uppercase tracking-[0.25em] sm:text-sm;
+}
+
+.section-heading {
+  @apply font-hero font-medium text-3xl leading-tight sm:text-4xl md:text-5xl;
 }
