@@ -1,0 +1,274 @@
+@if (isOpen()) {
+  <div
+    class="fixed inset-0 z-50 flex items-center justify-center bg-forest-dark/80 p-4 backdrop-blur-sm"
+    (mousedown)="handleBackdropClick($event)"
+  >
+    <section
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="availability-modal-title"
+      aria-describedby="availability-modal-description"
+      class="max-h-[calc(100dvh-2rem)] w-full max-w-2xl overflow-y-auto rounded-2xl border border-gold/30 bg-ivory text-charcoal shadow-2xl"
+    >
+      <!-- Header -->
+      <div class="flex items-start justify-between border-b border-charcoal/10 px-5 py-5 sm:px-7">
+        <div class="pr-6">
+          <p class="font-site text-xs font-medium uppercase tracking-[0.25em] text-gold-dark">
+            Check your date
+          </p>
+
+          <h2 id="availability-modal-title" class="mt-2 font-hero text-3xl font-medium sm:text-4xl">
+            Tell us about your event
+          </h2>
+
+          <p
+            id="availability-modal-description"
+            class="mt-2 font-site text-sm leading-6 text-stone"
+          >
+            Send us your event details and we’ll confirm availability.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          aria-label="Close availability form"
+          class="grid h-10 w-10 flex-none place-items-center rounded-full border border-charcoal/15 text-stone transition hover:border-gold hover:text-gold-dark"
+          (click)="close()"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            class="h-5 w-5"
+            aria-hidden="true"
+          >
+            <path d="M6 6l12 12M18 6 6 18" stroke-linecap="round" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="px-5 py-5 sm:px-7 sm:py-6">
+        <!-- Standard mirror details -->
+        <div class="rounded-xl border border-gold/30 bg-gold/10 p-4 sm:p-5">
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <p class="font-site text-sm font-semibold text-charcoal">Standard Grid Mirror</p>
+
+              <p class="mt-1 font-site text-sm text-stone">5 mirrors wide × 6 mirrors tall</p>
+
+              <p class="mt-2 font-site text-xs leading-5 text-stone/85">
+                Delivery, professional setup, and pickup included.
+              </p>
+            </div>
+
+            <p class="font-site text-base font-semibold text-gold-dark">
+              {{ priceText() }}
+            </p>
+          </div>
+        </div>
+
+        <!-- Service area -->
+        <div class="mt-3 flex items-start gap-3 rounded-xl border border-charcoal/10 px-4 py-3">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.7"
+            class="mt-0.5 h-5 w-5 flex-none text-gold-dark"
+            aria-hidden="true"
+          >
+            <path
+              d="M12 21s6-5.1 6-11a6 6 0 1 0-12 0c0 5.9 6 11 6 11Z"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <circle cx="12" cy="10" r="2" />
+          </svg>
+
+          <p class="font-site text-sm leading-6 text-stone">
+            Currently serving events within approximately one hour of Salt Lake City.
+          </p>
+        </div>
+
+        <form class="mt-6" [formGroup]="form" (ngSubmit)="submit()">
+          <div class="grid gap-5 sm:grid-cols-2">
+            <!-- Name -->
+            <div>
+              <label for="availability-name" class="font-site text-sm font-medium text-charcoal">
+                Name
+              </label>
+
+              <input
+                id="availability-name"
+                type="text"
+                autocomplete="name"
+                formControlName="name"
+                class="mt-2 w-full rounded-lg border border-charcoal/20 bg-cream px-4 py-3 font-site text-sm text-charcoal outline-none transition placeholder:text-stone/50 focus:border-gold focus:ring-2 focus:ring-gold/20"
+                [class.border-red-600]="isInvalid('name')"
+              />
+
+              @if (isInvalid('name')) {
+                <p class="mt-1 font-site text-xs text-red-700">Please enter your name.</p>
+              }
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="availability-email" class="font-site text-sm font-medium text-charcoal">
+                Email
+              </label>
+
+              <input
+                id="availability-email"
+                type="email"
+                autocomplete="email"
+                formControlName="email"
+                class="mt-2 w-full rounded-lg border border-charcoal/20 bg-cream px-4 py-3 font-site text-sm text-charcoal outline-none transition placeholder:text-stone/50 focus:border-gold focus:ring-2 focus:ring-gold/20"
+                [class.border-red-600]="isInvalid('email')"
+              />
+
+              @if (isInvalid('email')) {
+                <p class="mt-1 font-site text-xs text-red-700">Enter a valid email address.</p>
+              }
+            </div>
+
+            <!-- Phone -->
+            <div>
+              <label for="availability-phone" class="font-site text-sm font-medium text-charcoal">
+                Phone number
+              </label>
+
+              <input
+                id="availability-phone"
+                type="tel"
+                autocomplete="tel"
+                formControlName="phone"
+                class="mt-2 w-full rounded-lg border border-charcoal/20 bg-cream px-4 py-3 font-site text-sm text-charcoal outline-none transition placeholder:text-stone/50 focus:border-gold focus:ring-2 focus:ring-gold/20"
+                [class.border-red-600]="isInvalid('phone')"
+              />
+
+              @if (isInvalid('phone')) {
+                <p class="mt-1 font-site text-xs text-red-700">Please enter your phone number.</p>
+              }
+            </div>
+
+            <!-- Event date -->
+            <div>
+              <label for="availability-date" class="font-site text-sm font-medium text-charcoal">
+                Event date
+              </label>
+
+              <input
+                id="availability-date"
+                type="date"
+                formControlName="eventDate"
+                [min]="minimumDate"
+                class="mt-2 w-full rounded-lg border border-charcoal/20 bg-cream px-4 py-3 font-site text-sm text-charcoal outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20"
+                [class.border-red-600]="isInvalid('eventDate')"
+              />
+
+              @if (isInvalid('eventDate')) {
+                <p class="mt-1 font-site text-xs text-red-700">Please select your event date.</p>
+              }
+            </div>
+
+            <!-- Location -->
+            <div>
+              <label
+                for="availability-location"
+                class="font-site text-sm font-medium text-charcoal"
+              >
+                Venue or event city
+              </label>
+
+              <input
+                id="availability-location"
+                type="text"
+                autocomplete="address-level2"
+                placeholder="Example: Draper, Utah"
+                formControlName="location"
+                class="mt-2 w-full rounded-lg border border-charcoal/20 bg-cream px-4 py-3 font-site text-sm text-charcoal outline-none transition placeholder:text-stone/50 focus:border-gold focus:ring-2 focus:ring-gold/20"
+                [class.border-red-600]="isInvalid('location')"
+              />
+
+              @if (isInvalid('location')) {
+                <p class="mt-1 font-site text-xs text-red-700">Please enter the event location.</p>
+              }
+            </div>
+
+            <!-- Event type -->
+            <div>
+              <label
+                for="availability-event-type"
+                class="font-site text-sm font-medium text-charcoal"
+              >
+                Event type
+              </label>
+
+              <select
+                id="availability-event-type"
+                formControlName="eventType"
+                class="mt-2 w-full rounded-lg border border-charcoal/20 bg-cream px-4 py-3 font-site text-sm text-charcoal outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20"
+                [class.border-red-600]="isInvalid('eventType')"
+              >
+                <option value="" disabled>Select an event</option>
+
+                <option value="Wedding">Wedding</option>
+                <option value="Birthday">Birthday</option>
+                <option value="Shower">Bridal or baby shower</option>
+                <option value="Corporate">Corporate event</option>
+                <option value="Other">Other</option>
+              </select>
+
+              @if (isInvalid('eventType')) {
+                <p class="mt-1 font-site text-xs text-red-700">Please select an event type.</p>
+              }
+            </div>
+          </div>
+
+          <!-- Details -->
+          <div class="mt-5">
+            <label for="availability-details" class="font-site text-sm font-medium text-charcoal">
+              Additional details
+              <span class="font-normal text-stone">— optional</span>
+            </label>
+
+            <textarea
+              id="availability-details"
+              rows="4"
+              placeholder="Tell us about the venue, setup location, or how you would like to use the mirror."
+              formControlName="details"
+              class="mt-2 w-full resize-none rounded-lg border border-charcoal/20 bg-cream px-4 py-3 font-site text-sm text-charcoal outline-none transition placeholder:text-stone/50 focus:border-gold focus:ring-2 focus:ring-gold/20"
+            ></textarea>
+          </div>
+
+          <!-- Honeypot -->
+          <div class="absolute -left-[9999px] h-px w-px overflow-hidden" aria-hidden="true">
+            <label for="availability-website">Website</label>
+
+            <input
+              id="availability-website"
+              type="text"
+              tabindex="-1"
+              autocomplete="off"
+              formControlName="website"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="mt-6 w-full rounded-full bg-gold px-6 py-3.5 font-site text-sm font-semibold tracking-wide text-forest-dark transition hover:bg-gold-dark hover:text-ivory"
+          >
+            SEND AVAILABILITY REQUEST
+          </button>
+
+          <p class="mt-3 text-center font-site text-xs leading-5 text-stone">
+            Submitting this form does not confirm your booking. We’ll contact you to confirm
+            availability and next steps.
+          </p>
+        </form>
+      </div>
+    </section>
+  </div>
+}

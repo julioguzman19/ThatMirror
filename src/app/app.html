@@ -75,7 +75,10 @@
 
       <!-- Check Availability -->
       <div class="mt-auto">
-        <app-check-availability-button label="CHECK AVAILABILITY"></app-check-availability-button>
+        <app-check-availability-button
+          label="CHECK AVAILABILITY"
+          (pressed)="openAvailabilityModal()"
+        />
       </div>
     </div>
   </section>
@@ -121,7 +124,7 @@
       Send us your event date and location, and we'll confirm availability.
     </p>
 
-    <app-check-availability-button label="CHECK AVAILABILITY"></app-check-availability-button>
+    <app-check-availability-button label="CHECK AVAILABILITY" (pressed)="openAvailabilityModal()" />
   </section>
 
   <!-- Footer -->
@@ -129,15 +132,21 @@
     <div
       class="flex flex-col items-center justify-between gap-4 text-center text-sm text-ivory/50 sm:flex-row sm:text-left"
     >
-      <p>© 2026 ThatMirror. All rights reserved.</p>
-
+      <p>&copy; {{ currentYear }} ThatMirror. All rights reserved.</p>
       <div class="flex items-center gap-5">
         <a href="#" class="transition-colors hover:text-gold">Instagram</a>
 
-        <a href="#" class="transition-colors hover:text-gold">TikTok</a>
+        <a href="#" class="transition-colors hover:text-gold">YouTube</a>
 
         <a href="mailto:hello@thatmirror.com" class="transition-colors hover:text-gold"> Email </a>
       </div>
     </div>
   </footer>
 </div>
+
+<app-availability-modal
+  [isOpen]="availabilityModalOpen()"
+  priceText="Starting at $___"
+  (closed)="closeAvailabilityModal()"
+  (requestSubmitted)="submitAvailabilityRequest($event)"
+/>

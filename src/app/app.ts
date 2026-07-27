@@ -1,15 +1,13 @@
 import { Component, signal } from '@angular/core';
+import {
+  AvailabilityModalComponent,
+  AvailabilityRequest,
+} from './components/availability-modal/availability-modal.component';
 import { CheckAvailabilityButtonComponent } from './components/check-availability-button/check-availability-button.component';
 import { FeatureItemComponent } from './components/feature-item/feature-item.component';
 import { GalleryComponent } from './components/gallery/gallery.component';
 
-type FeatureIcon =
-  | 'camera'
-  | 'sparkles'
-  | 'flower'
-  | 'guests'
-  | 'celebration'
-  | 'delivery';
+type FeatureIcon = 'camera' | 'sparkles' | 'flower' | 'guests' | 'celebration' | 'delivery';
 
 interface Feature {
   icon: FeatureIcon;
@@ -19,6 +17,7 @@ interface Feature {
 @Component({
   selector: 'app-root',
   imports: [
+    AvailabilityModalComponent,
     CheckAvailabilityButtonComponent,
     FeatureItemComponent,
     GalleryComponent,
@@ -55,4 +54,20 @@ export class App {
       title: 'Setup Included',
     },
   ];
+
+  protected readonly currentYear = new Date().getFullYear();
+
+  protected readonly availabilityModalOpen = signal(false);
+
+  protected openAvailabilityModal(): void {
+    this.availabilityModalOpen.set(true);
+  }
+
+  protected closeAvailabilityModal(): void {
+    this.availabilityModalOpen.set(false);
+  }
+
+  protected submitAvailabilityRequest(request: AvailabilityRequest): void {
+    console.log(request);
+  }
 }

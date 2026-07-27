@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-check-availability-button',
@@ -8,5 +8,6 @@ import { Component, input } from '@angular/core';
   },
 })
 export class CheckAvailabilityButtonComponent {
-  label = input.required<string>();
+  readonly label = input.required<string>();
+  readonly pressed = output<void>();
 }
