@@ -1,43 +1,58 @@
 import { Component, signal } from '@angular/core';
-import { FeatureItemComponent } from './components/feature-item/feature-item.component';
 import { CheckAvailabilityButtonComponent } from './components/check-availability-button/check-availability-button.component';
+import { FeatureItemComponent } from './components/feature-item/feature-item.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
 
+type FeatureIcon =
+  | 'camera'
+  | 'sparkles'
+  | 'flower'
+  | 'guests'
+  | 'celebration'
+  | 'delivery';
 
+interface Feature {
+  icon: FeatureIcon;
+  title: string;
+}
 
 @Component({
   selector: 'app-root',
-  imports: [CheckAvailabilityButtonComponent,FeatureItemComponent],
+  imports: [
+    CheckAvailabilityButtonComponent,
+    FeatureItemComponent,
+    GalleryComponent,
+  ],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
 export class App {
   protected readonly title = signal('that-mirror');
 
-galleryAtStart = true;
-galleryAtEnd = false;
-
-scrollGalleryPage(element: HTMLElement, direction: number): void {
-  const card = element.querySelector<HTMLElement>('article');
-
-  if (!card) {
-    return;
-  }
-
-  const gap = window.innerWidth >= 640 ? 16 : 12;
-  const cardsToMove = window.innerWidth >= 640 ? 2 : 1;
-
-  element.scrollBy({
-    left: (card.offsetWidth + gap) * cardsToMove * direction,
-    behavior: 'smooth',
-  });
-}
-
-updateGalleryButtons(element: HTMLElement): void {
-  const tolerance = 2;
-
-  this.galleryAtStart = element.scrollLeft <= tolerance;
-
-  this.galleryAtEnd =
-    element.scrollLeft + element.clientWidth >= element.scrollWidth - tolerance;
-}
+  protected readonly features: Feature[] = [
+    {
+      icon: 'camera',
+      title: 'Photo Moments',
+    },
+    {
+      icon: 'sparkles',
+      title: 'Customizable',
+    },
+    {
+      icon: 'flower',
+      title: 'Easy Styling',
+    },
+    {
+      icon: 'guests',
+      title: 'Guest Favorite',
+    },
+    {
+      icon: 'celebration',
+      title: 'Any Event',
+    },
+    {
+      icon: 'delivery',
+      title: 'Setup Included',
+    },
+  ];
 }
