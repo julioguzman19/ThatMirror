@@ -35,8 +35,7 @@ jobs:
           npm install
 
       - name: Build Angular Application
-        run: ng build --configuration production --base-href /ThatMirror/
-
+        run: ng build --configuration production --base-href /
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
