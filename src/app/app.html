@@ -2,11 +2,7 @@
   <!-- Header -->
   <header class="flex items-center justify-between font-site section-padding">
     <a href="#" class="flex items-center gap-3">
-      <img
-        src="images/temp-logo.svg"
-        alt="ThatMirror logo"
-        class="h-10 w-10 sm:h-11 sm:w-11 lg:h-12 lg:w-12"
-      />
+      <img src="images/temp-logo.svg" alt="ThatMirror logo" class="h-10 w-10 sm:h-11 sm:w-11 lg:h-12 lg:w-12" />
 
       <div>
         <p class="text-base font-semibold tracking-widest sm:text-lg lg:text-xl">THATMIRROR</p>
@@ -15,30 +11,30 @@
       </div>
     </a>
 
-    <a
-      href="#contact"
-      class="rounded-full border border-gold px-4 py-2 text-xs text-gold transition hover:bg-gold hover:text-forest sm:px-5 sm:text-sm"
-    >
+    <!-- <a href="#contact"
+      class="rounded-full border border-gold px-4 py-2 text-xs text-gold transition hover:bg-gold hover:text-forest sm:px-5 sm:text-sm">
       Contact us
+    </a> -->
+    <a href="javascript:void(0)"
+      class="pointer-events-none select-none rounded-full border border-neutral-400 px-4 py-2 text-xs text-neutral-400 opacity-60 sm:px-5 sm:text-sm"
+      tabindex="-1" aria-disabled="true">
+      Coming Soon
     </a>
+
   </header>
 
   <!-- Hero -->
   <section class="relative flex overflow-hidden min-h-[520px] section-padding">
     <!-- Responsive background -->
     <picture class="absolute inset-0">
-      <img
-        src="images/hero-background.webp"
-        alt="Elegant custom grid mirror surrounded by flowers and candles"
-        class="h-full w-full object-cover object-center md:object-right"
-        fetchpriority="high"
-      />
+      <img src="images/hero-background.webp" alt="Elegant custom grid mirror surrounded by flowers and candles"
+        class="h-full w-full object-cover object-center md:object-right" fetchpriority="high" />
     </picture>
 
     <!-- Dark overlay -->
     <div
-      class="absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/45 to-transparent md:via-forest-dark/55 lg:via-forest-dark/45"
-    ></div>
+      class="absolute inset-0 bg-gradient-to-r from-forest-dark/95 via-forest-dark/45 to-transparent md:via-forest-dark/55 lg:via-forest-dark/45">
+    </div>
 
     <!-- Content -->
     <div class="relative flex flex-col w-full md:max-w-xl lg:max-w-3xl">
@@ -50,8 +46,7 @@
 
         <!-- Heading -->
         <h1
-          class="flex flex-col font-hero font-medium leading-[0.95] text-4xl gap-6 sm:text-5xl md:text-6xl lg:text-7xl"
-        >
+          class="flex flex-col font-hero font-medium leading-[0.95] text-4xl gap-6 sm:text-5xl md:text-6xl lg:text-7xl">
           <span class="text-ivory"> The mirror </span>
 
           <span class="italic text-ivory"> your guests </span>
@@ -67,18 +62,14 @@
 
         <!-- Subtitle -->
         <p
-          class="max-w-[150px] text-base font-site leading-7 text-ivory/85 mb-7 sm:text-lg sm:max-w-[220px] lg:text-xl lg:max-w-[385px]"
-        >
+          class="max-w-[150px] text-base font-site leading-7 text-ivory/85 mb-7 sm:text-lg sm:max-w-[220px] lg:text-xl lg:max-w-[385px]">
           Rent our custom grid mirror for weddings, parties, and special events.
         </p>
       </div>
 
       <!-- Check Availability -->
       <div class="mt-auto">
-        <app-check-availability-button
-          label="CHECK AVAILABILITY"
-          (pressed)="openAvailabilityModal()"
-        />
+        <app-check-availability-button label="CHECK AVAILABILITY" (pressed)="openAvailabilityModal()" />
       </div>
     </div>
   </section>
@@ -112,10 +103,8 @@
   </section>
 
   <!-- Contact -->
-  <section
-    id="contact"
-    class="flex flex-col gap-4 items-center text-center bg-ivory text-center text-charcoal gap-4 section-padding"
-  >
+  <section id="contact"
+    class="flex flex-col gap-4 items-center text-center bg-ivory text-center text-charcoal gap-4 section-padding">
     <p class="text-gold-dark section-eyebrow">CHECK YOUR DATE</p>
 
     <h2 class="section-heading">Ready to book?</h2>
@@ -129,24 +118,12 @@
 
   <!-- Footer -->
   <footer class="border-t border-gold/20 bg-forest-dark section-padding">
-    <div
-      class="flex flex-col items-center justify-between gap-4 text-center text-sm text-ivory/50 sm:flex-row sm:text-left"
-    >
+    <div class="flex flex-col items-center justify-center text-center text-sm text-ivory/50">
       <p>&copy; {{ currentYear }} ThatMirror. All rights reserved.</p>
-      <div class="flex items-center gap-5">
-        <a href="#" class="transition-colors hover:text-gold">Instagram</a>
-
-        <a href="#" class="transition-colors hover:text-gold">YouTube</a>
-
-        <a href="mailto:hello@thatmirror.com" class="transition-colors hover:text-gold"> Email </a>
-      </div>
     </div>
   </footer>
+
 </div>
 
-<app-availability-modal
-  [isOpen]="availabilityModalOpen()"
-  priceText="Starting at $___"
-  (closed)="closeAvailabilityModal()"
-  (requestSubmitted)="submitAvailabilityRequest($event)"
-/>
+<app-availability-modal [isOpen]="availabilityModalOpen()" priceText="Starting at $___"
+  (closed)="closeAvailabilityModal()" (requestSubmitted)="submitAvailabilityRequest($event)" />
